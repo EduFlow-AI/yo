@@ -15,7 +15,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { AiChatInterface } from '@/components/ai/AiChatInterface'; // Import AI Chat Interface
+import { AiChatInterfaceWithThinking } from '@/components/ai/AiChatInterfaceWithThinking'; // Import AI Chat Interface with Thinking
 
 
 // Interface for content chunks
@@ -316,7 +316,7 @@ export default function StudentHubPage() {
                     <CardDescription className="text-slate-400">Ask questions about the SBC, concepts, or get help with assignments.</CardDescription>
                 </CardHeader>
                 <CardContent className="p-4">
-                    <AiChatInterface /> {/* Add the chat component here */}
+                    <AiChatInterfaceWithThinking /> {/* Add the chat component with thinking here */}
                 </CardContent>
             </Card>
             {/* --- End AI Chat Section --- */}
