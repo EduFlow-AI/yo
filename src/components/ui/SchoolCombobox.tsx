@@ -78,10 +78,10 @@ export function SchoolCombobox({
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-full p-0">
+      <PopoverContent className="w-full p-0 bg-white border shadow-md">
         <Command>
-          <CommandInput 
-            placeholder={searchPlaceholder} 
+          <CommandInput
+            placeholder={searchPlaceholder}
             value={inputValue}
             onValueChange={setInputValue}
             onInput={handleInputChange}

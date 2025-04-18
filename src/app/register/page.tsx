@@ -50,7 +50,7 @@ const formSchema = z.object({
   firstName: z.string().min(2, { message: "First name must be at least 2 characters." }),
   surname: z.string().min(2, { message: "Surname must be at least 2 characters." }),
   email: z.string().email({ message: "Invalid email address." }),
-  phone: z.string().optional(), // Optional field
+  phone: z.string().regex(/^\+?[0-9]{10,15}$/, { message: "Please enter a valid phone number (10-15 digits)." }).optional(), // Optional field with validation
   school: z.string().optional(), // Optional field
   location: z.string().optional(), // Optional field
   position: z.enum(["Teacher", "Student",  "Other"], { required_error: "Position is required."}), // Added required_error
@@ -230,12 +230,13 @@ export default function RegisterPage() {
                       <FormControl>
                         <Input
                           type="tel"
-                          placeholder="+233 599 294 673"
+                          placeholder="+233599294673"
                           {...field}
                           disabled={isLoading}
                           className="bg-white/90 text-black placeholder:text-gray-500 h-11"
                         />
                       </FormControl>
+                      <div className="text-xs text-gray-300 mt-1">Format: +233XXXXXXXXX (10-15 digits)</div>
                       <FormMessage className="text-red-400 text-xs" />
                     </FormItem>
                   )}
